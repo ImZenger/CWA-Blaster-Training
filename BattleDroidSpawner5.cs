@@ -37,7 +37,7 @@ public class BattleDroidSpawner5 : MonoBehaviour
     private void SpawnObject(){
 		 time = 0;
         GameObject a = Instantiate(droidPrefab) as GameObject;
-        a.transform.position = new Vector3(screenBounds.x * 2, 0.5f, 2);
+        a.transform.position = new Vector3(screenBounds.x * 2, 1f, 2);
     }
 
 

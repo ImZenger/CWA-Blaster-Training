@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleDroidSpawner1 : MonoBehaviour
 {
-    public GameObject droidPrefab;
+    public GameObject droidPrefab, droidPrefab2;
     private Vector2 screenBounds;
 
 	public float maxTime = 5;
@@ -13,6 +13,8 @@ public class BattleDroidSpawner1 : MonoBehaviour
 	private float time;
 
 	private float spawnTime;
+
+	int whatToSpawn;
 
     // Use this for initialization
     void Start () {
@@ -29,7 +31,16 @@ public class BattleDroidSpawner1 : MonoBehaviour
  
          //Check if its the right time to spawn the object
          if(time >= spawnTime){
-             SpawnObject();
+            
+			whatToSpawn = Random.Range (1,3);
+
+			switch (whatToSpawn) {
+            case 1: 
+					SpawnObject();
+					break;
+			case 2:
+					SpawnObject1();
+					break; }
              SetRandomTime();
          }
  
@@ -37,7 +48,13 @@ public class BattleDroidSpawner1 : MonoBehaviour
     private void SpawnObject(){
 		 time = 0;
         GameObject a = Instantiate(droidPrefab) as GameObject;
-        a.transform.position = new Vector2(screenBounds.x * 2, -2.8f);
+        a.transform.position = new Vector2(screenBounds.x * 2, -1.914f);
+    }
+
+	private void SpawnObject1(){
+		 time = 0;
+        GameObject a = Instantiate(droidPrefab2) as GameObject;
+        a.transform.position = new Vector2(screenBounds.x * 2, -1.914f);
     }
 
 

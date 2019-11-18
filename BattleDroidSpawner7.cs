@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleDroidSpawner4 : MonoBehaviour
+public class BattleDroidSpawner7 : MonoBehaviour
 {
     public GameObject droidPrefab;
     private Vector2 screenBounds;
@@ -37,7 +37,7 @@ public class BattleDroidSpawner4 : MonoBehaviour
     private void SpawnObject(){
 		 time = 0;
         GameObject a = Instantiate(droidPrefab) as GameObject;
-        a.transform.position = new Vector3(screenBounds.x * -2, 1f, 2);
+        a.transform.position = new Vector2(screenBounds.x * 2, -1.914f);
     }
 
 
